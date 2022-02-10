@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.cabecalho_rodape{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.cabecalho_rodape a{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: #666666;
+    text-decoration: unset;
+}
+
+.menu_header{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.logo{
+    width: 100px;
+}
+
+.banner{
+    background-image: url("../img/national-cancer-institute-rUfUd-7WW78-unsplash\ 1.png");
+    width: 100%;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 12%;
+}
+
+h1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 75px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.slogan{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.nome_slogan{
+    height: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn_banner{
+    background-color: #003FAA;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 6.5% 4.5%;
+}
+
+.btn_banner a{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: unset;
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 1000px;
+}
+
+.quem_somos{
+    background-image: url("../img/jonathan-borba-v_2FRXEba94-unsplash\ 1.png");
+    rotate: 30px;
+    width: 100%;
+    height: 585px;
+    margin-top: 1%;
+}
+
+.posicionamento{
+    height: 105%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 55px;
+    font-weight: 600;
+    color: #ffffff;
+    border-bottom: 3px solid #D6CBCB;
+    width: 37%;
+    height: 14%;
+    margin-top: 1%;
+}
+
+.descricao_qmsomos{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0 16%;
+}
+
+@media (max-width: 600px){
+    .container{
+        width: 80vw;
+    }
+
+    .cabecalho_rodape a{
+        font-size: 15px;
+    }
+
+    .menu_header{
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+    }
+
+    .logo{
+        width: 50px;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+
+    .nome_slogan{
+        height: 29%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .botoes{
+        width: unset;
+    }
+
+    .banner{
+        justify-content: space-evenly;
+    }
+
+    .btn_banner{
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn_banner a{
+        font-size: unset;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .posicionamento h2{
+        justify-content: center;
+        height: 6%;
+    }
+    .descricao_qmsomos{
+        font-size: 20px;
+        margin-bottom: 5%;
+    }
+}

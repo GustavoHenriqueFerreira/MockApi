@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/css/ConsultaAdm.css">
+    <title>SP Medical Group</title>
+</head>
+
+<body>
+    <header>
+        <div class="container cabecalho_rodape">
+            <div>
+                <img class="logo" src="../Assets/img/logo_spmedgroup_v1 3.png" alt="logo">
+            </div>
+            <nav class="menu_header">
+                <a href="">Consultas</a>
+                <a href="">Clínicas</a>
+                <a href="">Especialidades</a>
+                <a href="">Médicos</a>
+                <a href="">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div className="banner-ConAdm">
+                <h1 className="h1-ConAdm">Lista de Consultas</h1>
+
+                <div className="container-ConAdm box_pesquisa-ConAdm">
+                    <div className="espacamento_box-ConAdm">
+                        <div>
+                            <label className="label-ConAdm">Clínica:</label>
+                            <input className="input_pesquisa-ConAdm" type="text" />
+                        </div>
+                        <div>
+                            <label className="label-ConAdm">Médico:</label>
+                            <input className="input_pesquisa-ConAdm" type="text" />
+                        </div>
+                    </div>
+
+                    <div className="espacamento_box-ConAdm">
+                        <div>
+                            <label className="label-ConAdm">Paciente:</label>
+                            <input className="input_pesquisa-ConAdm" type="text" />
+                        </div>
+                        <div>
+                            <label className="label-ConAdm">Data da Consulta:</label>
+                            <input className="input_pesquisa-ConAdm" type="text" />
+                        </div>
+                    </div>
+
+                    <div className="espacamento_btn-ConAdm">
+                        <button className="btn_listar-ConAdm">Listar</button>
+                    </div>
+                </div>
+
+                <div className="btn_cadastrar">
+                    <Link to="/cadastroConsulta"><button className="btn_cadastrar-ConAdm">Cadastrar Consulta</button>
+                    </Link>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div className="container-ConAdm posicionamento_titulo-ConAdm">
+                <h2 className="titulo-ConAdm">Consultas</h2>
+            </div>
+            <div className="container-ConAdm lista_consultas-ConAdm">
+                <div className="container consulta-ConAdm">
+                    <div className="fundo-ConAdm">
+                        <h2>1° Consulta</h2>
+                        <li className="topicos-ConAdm">Paciente: </li>
+                        <li className="topicos-ConAdm">Data de Nascimento: </li>
+                        <li className="topicos-ConAdm">Telefone: </li>
+                        <li className="topicos-ConAdm">Médico: </li>
+                        <li className="topicos-ConAdm">Data: </li>
+
+                        <li className="topicos-ConAdm">Situação: </li>
+
+                        <div className="situacao">
+                            <SituacaoConsulta> setIdSituacao(campo.target.value)}
+                                idConsulta={consultas.idConsulta}
+                                situacao={consultas.idSituacaoNavigation.descricaoSituacao} />
+                                <button onClick> permitirSelect(consultas.idConsulta)} type="button"
+                                    className="vazio"><img className="img-editarSituacao" src={IconEditar} /></button>
+
+                                <button className="container btn_situacao-ConAdm">Atualizar</button>
+                        </div>
+
+                        <p className="topicos-ConAdm">descricaoConsulta</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

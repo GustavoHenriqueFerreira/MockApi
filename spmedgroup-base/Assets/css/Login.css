@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.login{
+    display: flex;
+}
+
+.posicionamento{
+    height: 12%;
+    width: 62%;
+}
+
+.bloco_login{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 10%;
+}
+
+h1{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 72px;;
+    color: black;
+}
+
+.input_login{
+    width: 525px;
+    height: 70px;
+    margin-left: 5%;
+    background: #90C7FF;
+    font-size: 24px;
+    border: none;
+    color: white;
+}
+
+.input_login::placeholder {
+    color: white;
+}
+
+.google{
+    width: 130px;
+    height: 130px;
+}
+
+.login_senha{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 26%;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 280px;
+}
+
+.btn_login{
+    border-radius: 30px;
+    width: 600px;
+    background: #90C7FF;
+}
+
+/* .acessar_page-login{
+    display: flex;
+    justify-content: center;
+} */
+
+.btn_acessar{
+    width: 215px;
+    height: 70px;
+    background-color: #90C7FF;
+    border-radius: 30px;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mudar_senha{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    color: #666666;
+    text-decoration: unset;
+}
+
+@media (max-width: 600px){
+
+    .img_login{
+        width: 0px;
+    }
+
+    .login{
+        display: unset;
+    }
+
+    .google{
+        width: 90px;
+        height: 90px;
+    }
+
+    .login_senha{
+        height: unset;
+    }
+
+    .bloco_login{
+        width: 100%;
+        height: 90%;
+        margin-top: 5%;
+        margin-bottom: unset;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .input_login {
+        width: 350px;
+        height: 50px;
+        margin-left: 5%;
+        font-size: 17px;
+    }
+
+    .botoes{
+        height: 277px;
+    }
+
+    .btn_login{
+        border-radius: 30px;
+        width: 400px;
+        height: unset;
+        background: #90C7FF;
+    }
+
+    .btn_acessar {
+        width: 200px;
+        height: 63px;
+        color: #ffffff;
+        font-size: 25px;
+    }
+
+    .mudar_senha{
+        font-size: 17px;
+        text-decoration: unset;
+    }
+}

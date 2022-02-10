@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/css/ConsultaMed.css">
+    <title>SP Medical Group</title>
+</head>
+
+<body>
+    <header>
+        <div class="container cabecalho_rodape">
+            <div>
+                <img class="logo" src="../Assets/img/logo_spmedgroup_v1 3.png" alt="logo">
+            </div>
+            <nav class="menu_header">
+                <a href="">Consultas</a>
+                <a href="">Clínicas</a>
+                <a href="">Especialidades</a>
+                <a href="">Médicos</a>
+                <a href="">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="banner">
+                <h1>Lista de Consultas</h1>
+
+                <div class="container box_pesquisa">
+                    <div class="espacamento_box">
+                        <div>
+                            <label>Clínica:</label>
+                            <input class="input_pesquisa" type="text">
+                        </div>
+                        <div>
+                            <label>Médico:</label>
+                            <input class="input_pesquisa" type="text">
+                        </div>
+                    </div>
+
+                    <div class="espacamento_box">
+                        <div>
+                            <label>Paciente:</label>
+                            <input class="input_pesquisa" type="text">
+                        </div>
+                        <div>
+                            <label>Data da Consulta:</label>
+                            <input class="input_pesquisa" type="text">
+                        </div>
+                    </div>
+
+                    <div class="espacamento_btn">
+                        <button class="btn_listar">Listar</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn_descricao">Adicionar Descrição</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <section>
+                <div className="container-ConMed posicionamento_titulo-ConMed">
+                    <h2 className="titulo-ConMed">Consultas</h2>
+                </div>
+                <div className="container-ConMed lista_consultas-ConMed">
+
+                    <div className="consulta-ConMed">
+                        <h2>1° Consulta</h2>
+                        <li className="topicos-ConMed">Clínica: </li>
+                        <li className="topicos-ConMed">Nome do Paciente: </li>
+                        <li className="topicos-ConMed">Telefone: </li>
+                        <li className="topicos-ConMed">Data de Nascimento: </li>
+                        <li className="topicos-ConMed">Data: </li>
+                        <li className="topicos-ConMed">Situação:</li>
+                        <p className="topicos-ConMed">descricaoConsulta</p>
+                    </div>
+
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <nav class="container cabecalho_rodape">
+            <a href="">Links Úteis</a>
+            <a href="">Telefone</a>
+            <img class="logo" src="../Assets/img/logo_spmedgroup_v1 3.png" alt="logo">
+            <a href="">Siga-nos</a>
+            <a href="">Quem somos?</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
