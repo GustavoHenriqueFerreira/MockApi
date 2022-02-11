@@ -21,10 +21,7 @@ export default function ConsultasAdm() {
         console.log('vamos fazer a chamada para a API');
 
         // faz a chamada para a API usando axios
-        axios('http://192.168.15.11:5000/api/consultas', {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
+        axios('https://6204f8ac161670001741b12e.mockapi.io/consulta', {
         })
             .then(resposta => {
                 // caso a resposta da requisição tenha um status code igual a 200
@@ -41,10 +38,10 @@ export default function ConsultasAdm() {
 
     useEffect(buscarConsultas, []);
 
-    function permitirSelect(idConsulta) {
-        console.log("Consulta " + idConsulta + " e a situação é " + idSituacao)
-        document.getElementById(idConsulta).removeAttribute("disabled");
-        var btn = document.getElementById("btn" + idConsulta);
+    function permitirSelect(id) {
+        console.log("Consulta " + id + " e a situação é " + idSituacao)
+        document.getElementById(id).removeAttribute("disabled");
+        var btn = document.getElementById("btn" + id);
 
         if (btn.style.display === "none")
             btn.style.display = "";
@@ -53,25 +50,20 @@ export default function ConsultasAdm() {
         }
     }
 
-    function alteraSituacao(idConsulta) {
+    function alteraSituacao(id) {
 
-        axios.patch("http://192.168.15.11:5000/api/consultas/situacao/" + idConsulta, {
-            idSituacao: idSituacao
-        }, {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
+        axios.patch("https://6204f8ac161670001741b12e.mockapi.io/consulta", {
         })
             .then(resposta => {
                 if (resposta.status === 200) {
-                    document.getElementById(idConsulta).setAttribute("disabled", "disabled");
-                    var btn = document.getElementById("btn" + idConsulta)
+                    document.getElementById(id).setAttribute("disabled", "disabled");
+                    var btn = document.getElementById("btn" + id)
 
                     btn.style.display = "none";
                     buscarConsultas();
                 }
             }).catch(erro => console.log(erro))
-        console.log("consulta " + idConsulta + " atualizada");
+        console.log("consulta " + id + " atualizada");
     }
 
 
@@ -127,32 +119,30 @@ export default function ConsultasAdm() {
                                 return (
                                     <div className="container consulta-ConAdm">
                                         <div className="fundo-ConAdm">
-                                            <h2> {consultas.idConsulta}° Consulta</h2>
+                                            <h2>{consultas.id}° Consulta</h2>
                                             <div className="container img_mapa_posicionamento">
-                                                <li className="topicos-ConAdm">Paciente: {consultas.idPacienteNavigation.nomePaciente}</li>
+                                                <li className="topicos-ConAdm">Paciente: {consultas.pacientes[0].nomePaciente}</li>
                                                 <Link to="/Localizacoes"><img className="img_mapa" src={IconMapa} /></Link>
                                             </div>
-                                            {/* <li className="topicos-ConAdm">Clínica:  {consultas.idMedicoNavigation.idClinicaNavigation.nomeClinica} </li> */}
                                             <li className="topicos-ConAdm">Data de Nascimento: {Intl.DateTimeFormat("pt-BR", {
                                                 year: 'numeric', month: 'short', day: 'numeric',
-                                            }).format(new Date(consultas.idPacienteNavigation.nascimento))}</li>
-                                            <li className="topicos-ConAdm">Telefone: {consultas.idPacienteNavigation.telefone}</li>
-                                            <li className="topicos-ConAdm">Médico: {consultas.idMedicoNavigation.nomeMedico}</li>
+                                            }).format(new Date(consultas.pacientes[0].nascimento))}</li>
+                                            <li className="topicos-ConAdm">Telefone: {consultas.pacientes[0].telefone}</li>
+                                            <li className="topicos-ConAdm">Médico: {consultas.medicos[0].nomeMedico}</li>
                                             <li className="topicos-ConAdm">Data: {Intl.DateTimeFormat("pt-BR", {
                                                 year: 'numeric', month: 'short', day: 'numeric',
                                                 hour: 'numeric', minute: 'numeric',
                                                 hour12: true
-                                            }).format(new Date(consultas.dataHoraConsulta))}</li>
-
-                                            <li className="topicos-ConAdm">Situação: {consultas.idSituacaoNavigation.descricaoSituacao}</li>
+                                            }).format(new Date(consultas.dataConsulta))}</li>
+                                            {/* <li className="topicos-ConAdm">Situação: {consultas.situacoes[0].nomeSituacao}</li> */}
+                                            
 
                                             <div className="situacao">
-                                                <SituacaoConsulta mudar={(campo) => setIdSituacao(campo.target.value)} idConsulta={consultas.idConsulta} situacao={consultas.idSituacaoNavigation.descricaoSituacao} />
-                                                <button onClick={() => permitirSelect(consultas.idConsulta)} type="button" className="vazio"><img className="img-editarSituacao" src={IconEditar} /></button>
+                                                <SituacaoConsulta mudar={(campo) => setIdSituacao(campo.target.value)} id={consultas.id} situacao={consultas.situacoes[0].nomeSituacao} />
+                                                <button onClick={() => permitirSelect(consultas.id)} type="button" className="vazio"><img className="img-editarSituacao" src={IconEditar} /></button>
 
-                                                <button className="container btn_situacao-ConAdm" onClick={() => alteraSituacao(consultas.idConsulta)} id={"btn" + consultas.idConsulta} style={{ display: "none" }}>Atualizar</button>
+                                                <button className="container btn_situacao-ConAdm" onClick={() => alteraSituacao(consultas.id)} id={"btn" + consultas.id} style={{ display: "none" }}>Atualizar</button>
                                             </div>
-
                                             <p className="topicos-ConAdm descricao">{consultas.descricaoConsulta}</p>
                                         </div>
                                     </div>

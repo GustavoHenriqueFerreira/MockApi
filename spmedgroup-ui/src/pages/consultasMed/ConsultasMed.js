@@ -10,10 +10,7 @@ export default function ConsultasMed() {
     const [listaConsultasMed, setListaConsultasMed] = useState([]);
 
     function buscarConsultasMed() {
-        axios('http://192.168.15.11:5000/api/consultas/listaMed', {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
+        axios('https://6204f8ac161670001741b12e.mockapi.io/consulta', {
         })
             .then(resposta => {
                 if (resposta.status === 200) {
@@ -77,19 +74,18 @@ export default function ConsultasMed() {
                             listaConsultasMed.map((minhasConsultas) => {
                                 return (
                                     <div className="consulta-ConMed">
-                                        <h2>{minhasConsultas.idConsulta}° Consulta</h2>
-                                        {/* <li className="topicos-ConMed">Clínica:  {minhasConsultas.idMedicoNavigation.idClinicaNavigation.nomeClinica} </li> */}
-                                        <li className="topicos-ConMed">Nome do Paciente: {minhasConsultas.idPacienteNavigation.nomePaciente}</li>
-                                        <li className="topicos-ConMed">Telefone: {minhasConsultas.idPacienteNavigation.telefone}</li>
+                                        <h2>{minhasConsultas.id}° Consulta</h2>
+                                        <li className="topicos-ConMed">Nome do Paciente: {minhasConsultas.pacientes[0].nomePaciente}</li>
+                                        <li className="topicos-ConMed">Telefone: {minhasConsultas.pacientes[0].telefone}</li>
                                         <li className="topicos-ConMed">Data de Nascimento: {Intl.DateTimeFormat("pt-BR", {
                                             year: 'numeric', month: 'short', day: 'numeric',
-                                        }).format(new Date(minhasConsultas.idPacienteNavigation.nascimento))}</li>
+                                        }).format(new Date(minhasConsultas.pacientes[0].nascimento))}</li>
                                         <li className="topicos-ConMed">Data: {Intl.DateTimeFormat("pt-BR", {
                                             year: 'numeric', month: 'short', day: 'numeric',
                                             hour: 'numeric', minute: 'numeric',
                                             hour12: true
-                                        }).format(new Date(minhasConsultas.dataHoraConsulta))}</li>
-                                        <li className="topicos-ConMed">Situação: {minhasConsultas.idSituacaoNavigation.descricaoSituacao}</li>
+                                        }).format(new Date(minhasConsultas.dataConsulta))}</li>
+                                        <li className="topicos-ConMed">Situação: {minhasConsultas.situacoes[0].nomeSituacao}</li>
                                         <p className="topicos-ConMed descricao">{minhasConsultas.descricaoConsulta}</p>
                                     </div>
                                 )

@@ -73,17 +73,15 @@ export default function ConsultaPac() {
                             listaConsultasPac.map((minhasConsultas) => {
                                 return (
                                     <div className="consulta-ConPac">
-                                        {/* <li className="topicos-ConPac">Nome Médico: {minhasConsultas.nomeMedico}</li>
-                                        <li className="topicos-ConPac">CRM: {minhasConsultas.crm}</li> */}
-                                        <li className="topicos-ConPac">Nome Médico: {minhasConsultas.medicos.nomeMedico}</li>
-                                        {/* <h2>{minhasConsultas.idConsulta}° Consulta</h2>
-                                        <li className="topicos-ConPac">Nome Médico: {minhasConsultas.idMedicoNavigation.nomeMedico}</li>
+                                        <h2>{minhasConsultas.id}° Consulta</h2>
+                                        <li className="topicos-ConPac">Nome Médico: {minhasConsultas.medicos[0].nomeMedico}</li>
+                                        
                                         <li className="topicos-ConPac">Data: {Intl.DateTimeFormat("pt-BR", {
                                             year: 'numeric', month: 'short', day: 'numeric',
                                             hour: 'numeric', minute: 'numeric',
                                             hour12: true
-                                        }).format(new Date(minhasConsultas.dataHoraConsulta))}</li>
-                                        <li className="topicos-ConPac">Situação: {minhasConsultas.idSituacaoNavigation.descricaoSituacao}</li> */}
+                                        }).format(new Date(minhasConsultas.dataConsulta))}</li>
+                                        <li className="topicos-ConPac">Situação: {minhasConsultas.situacoes[0].nomeSituacao}</li>
                                     </div>
                                 )
                             })

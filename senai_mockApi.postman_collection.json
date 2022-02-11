@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "fa507a6f-f4e6-4e22-9801-30f59311a1ce",
+		"name": "senai_mockApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "usuários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://6204f8ac161670001741b12e.mockapi.io/usuario",
+					"protocol": "https",
+					"host": [
+						"6204f8ac161670001741b12e",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://6204f8ac161670001741b12e.mockapi.io/paciente",
+					"protocol": "https",
+					"host": [
+						"6204f8ac161670001741b12e",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"paciente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "médicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://6204f8ac161670001741b12e.mockapi.io/medico",
+					"protocol": "https",
+					"host": [
+						"6204f8ac161670001741b12e",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"medico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://6204f8ac161670001741b12e.mockapi.io/consulta",
+					"protocol": "https",
+					"host": [
+						"6204f8ac161670001741b12e",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"consulta"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
